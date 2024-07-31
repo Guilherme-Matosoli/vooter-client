@@ -1,11 +1,14 @@
+import { useTranslation } from "../i18n";
+
 interface HomeParams {
   params: {
     lng: string
   }
 }
 
-export default function Home({ params }: HomeParams) {
+export default async function Home({ params: { lng } }: HomeParams) {
+  const { t } = await useTranslation(lng, "home");
   return (
-    <>Hello, world {params.lng}</>
+    <>{t("hello")} {lng}</>
   );
 }
