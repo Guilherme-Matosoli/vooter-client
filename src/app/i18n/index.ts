@@ -1,21 +1,40 @@
-import { createInstance } from "i18next";
-import resourcesToBackend from "i18next-resources-to-backend";
-import { initReactI18next } from "react-i18next";
-import { getOptions } from "./settings";
+'use client'
 
-const initI18next = async (lng: string, ns: string) => {
-  const i18nInstance = createInstance()
-  await i18nInstance
-    .use(initReactI18next)
-    .use(resourcesToBackend((language: string, namespace: string) => import(`./locales/${language}/${namespace}.json`)))
-    .init(getOptions(lng, ns))
-  return i18nInstance
-}
+import i18next from 'i18next'
+import { initReactI18next, useTranslation as useTranslationOrg } from 'react-i18next'
+import resourcesToBackend from 'i18next-resources-to-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { getOptions, languages, cookieName } from './settings'
+import { useEffect } from 'react'
+import { useCookies } from 'react-cookie'
 
-export async function useTranslation(lng: string, ns: string, options?: any) {
-  const i18nextInstance = await initI18next(lng, ns)
-  return {
-    t: i18nextInstance.getFixedT(lng, Array.isArray(ns) ? ns[0] : ns, options.keyPrefix),
-    i18n: i18nextInstance
+const runsOnServerSide = typeof window === 'undefined'
+
+i18next
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(resourcesToBackend((language: string, namespace: string) => import(`./locales/${language}/${namespace}.json`)))
+  .init({
+    ...getOptions(undefined, "home"),
+    lng: undefined,
+    detection: {
+      order: ['path', 'htmlTag', 'cookie', 'navigator'],
+    },
+    preload: runsOnServerSide ? languages : []
+  });
+
+export function useTranslation(lng: string, ns: string, options?: any) {
+  const [cookies, setCookies] = useCookies([cookieName])
+  const ret = useTranslationOrg(ns, options);
+  const { i18n } = ret;
+
+  if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
+    i18n.changeLanguage(lng);
   }
+
+  useEffect(() => {
+    if (cookies.i18next === lng) return
+    setCookies(cookieName, lng, { path: '/' })
+  }, [lng, cookies.i18next])
+  return ret
 }
