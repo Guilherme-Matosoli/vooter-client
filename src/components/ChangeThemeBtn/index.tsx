@@ -44,8 +44,8 @@ export function ChangeThemeBtn() {
       <Image
         src={theme == "light" ? "/icons/sun.svg" : "/icons/moon.svg"}
         alt={theme == "light" ? "Sol" : "Lua"}
-        width={25}
-        height={25}
+        width={30}
+        height={30}
       />
     </button>
   )
