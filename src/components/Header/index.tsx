@@ -9,7 +9,7 @@ interface HeaderProps {
 export function Header({ lng }: HeaderProps) {
   const { t } = useTranslation(lng, "header");
   return (
-    <header className="flex justify-between items-center w-full bg-white dark:bg-black p-5 rounded-lg">
+    <header className="flex justify-between items-center w-full bg-white dark:bg-black py-4 px-5 rounded-lg">
       <h1 className="font-main font-bold text-2xl text-light dark:text-dark">
         <a href="/">
           Votter
