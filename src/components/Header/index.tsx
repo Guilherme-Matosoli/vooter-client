@@ -7,6 +7,13 @@ export function Header() {
           Votter
         </a>
       </h1>
+
+      <nav>
+      </nav>
+
+      <button>
+        themeChange
+      </button>
     </header>
   )
 }
