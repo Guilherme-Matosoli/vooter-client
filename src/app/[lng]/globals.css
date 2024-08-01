@@ -10,15 +10,29 @@
 
     transition: background .3s, color .3s;
   }
-}
 
-body {
-  min-block-size: 100dvh;
-  @apply flex flex-col p-5 bg-light dark:bg-dark;
+  body {
+    min-block-size: 100dvh;
+    @apply flex flex-col p-5 bg-light dark:bg-dark;
+  }
 }
 
 .content {
   flex: 1;
   width: min(100%, 1150px);
   margin: 0 auto;
+}
+
+.link {
+  @apply font-main text-lg text-light font-semibold relative dark:text-dark;
+
+  &::after {
+    content: '';
+    transition: all .3s;
+    @apply absolute left-1/2 top-full w-0 h-[2px] bg-dark dark:bg-light;
+  }
+
+  &:hover::after {
+    @apply w-full left-0;
+  }
 }
