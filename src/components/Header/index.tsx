@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChangeThemeBtn } from "../ChangeThemeBtn";
 import { useTranslation } from "@/app/i18n";
+import { LanguageSwitcher } from "../LanguageSwitcher";
 
 interface HeaderProps {
   lng: string
@@ -25,7 +26,10 @@ export function Header({ lng }: HeaderProps) {
         </Link>
       </nav>
 
-      <ChangeThemeBtn />
+      <section className="flex items-center gap-2">
+        <LanguageSwitcher />
+        <ChangeThemeBtn />
+      </section>
     </header>
   )
 }
