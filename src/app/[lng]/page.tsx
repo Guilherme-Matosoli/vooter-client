@@ -1,4 +1,5 @@
 "use client"
+import { Header } from "@/components/Header";
 import { useTranslation } from "../i18n";
 
 interface HomeParams {
@@ -10,6 +11,8 @@ interface HomeParams {
 export default function Home({ params: { lng } }: HomeParams) {
   const { t } = useTranslation(lng, "home");
   return (
-    <>{t("hello")} {lng}</>
+    <main className="content">
+      <Header />
+    </main>
   );
 }
