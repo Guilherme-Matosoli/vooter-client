@@ -12,7 +12,7 @@ export default function Home({ params: { lng } }: HomeParams) {
   const { t } = useTranslation(lng, "home");
   return (
     <main className="content">
-      <Header />
+      <Header lng={lng} />
     </main>
   );
 }
