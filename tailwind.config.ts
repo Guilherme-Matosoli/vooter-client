@@ -24,6 +24,11 @@ const config: Config = {
 
       fontFamily: {
         "main": "'Urbanist', sans-serif"
+      },
+
+      colors: {
+        "light": "#000",
+        "dark": "#fff"
       }
     },
   },
