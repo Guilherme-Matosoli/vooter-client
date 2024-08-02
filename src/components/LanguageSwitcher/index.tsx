@@ -9,7 +9,7 @@ export function LanguageSwitcher() {
       <section className="flex gap-2 items-center justify-center group">
         <button onClick={() => setActive(!active)} className="w-[30px] h-[30px] rounded-full  overflow-hidden">
           <img
-            src="/UM.svg"
+            src="/usaFlag.svg"
             alt="Language"
             className="object-fill"
           />
