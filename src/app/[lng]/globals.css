@@ -36,3 +36,17 @@
     @apply w-full left-0;
   }
 }
+
+.menuIcon {
+  @apply relative flex flex-col gap-2 w-7 h-[2px] bg-black dark:bg-white;
+
+  &::after {
+    content: '';
+    @apply absolute bottom-[6px] w-full h-[2px] bg-black dark:bg-white;
+  }
+
+  &::before {
+    content: '';
+    @apply absolute top-[6px] w-7 h-[2px] bg-black z-10 dark:bg-white;
+  }
+}
