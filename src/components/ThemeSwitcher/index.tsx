@@ -38,7 +38,7 @@ export function ThemeSwitcher() {
 
   return (
     <button
-      className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+      className="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-900 transition"
       onClick={changeTheme}
     >
       <Image
