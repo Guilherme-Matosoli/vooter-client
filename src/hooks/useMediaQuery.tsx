@@ -6,16 +6,14 @@ export function useMediaQuery(width: number) {
   const [matches, setMatches] = useState(false);
 
   const handleChangeSize = useCallback((e: MediaQueryListEvent) => {
-    e.matches && setMatches(true);
+    e.matches ? setMatches(true) : setMatches(false);
   }, []);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(`(max-width: ${width}px)`);
-    mediaQuery.addEventListener("change", handleChangeSize);
+    const media = window.matchMedia(`(min-width: ${width}px)`);
+    media.addEventListener("change", handleChangeSize);
 
-    if (mediaQuery.matches) setMatches(true);
-
-    return mediaQuery.removeEventListener("change", handleChangeSize);
+    media.matches && setMatches(true);
   }, []);
 
   return matches;
