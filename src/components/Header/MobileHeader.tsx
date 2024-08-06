@@ -1,6 +1,6 @@
 export function MobileHeader() {
   return (
-    <section>
+    <section className="flex items-center">
       <button>
         <span className="menuIcon"></span>
       </button>
