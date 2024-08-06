@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { HeaderProps } from ".";
 
-export function MobileHeader() {
+export function MobileHeader({ lng }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -11,6 +12,10 @@ export function MobileHeader() {
       >
         <span className={`menuIcon ${open && "open"}`}></span>
       </button>
+
+      <div>
+
+      </div>
     </section>
   );
 };

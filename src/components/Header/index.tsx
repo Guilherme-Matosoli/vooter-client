@@ -22,7 +22,7 @@ export function Header({ lng }: HeaderProps) {
           ?
           <HeaderCTAs lng={lng} />
           :
-          <MobileHeader />
+          <MobileHeader lng={lng} />
       }
     </header>
   )
