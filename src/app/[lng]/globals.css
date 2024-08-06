@@ -38,7 +38,7 @@
 }
 
 .menuIcon {
-  @apply relative flex flex-col gap-2 w-7 h-[2px] bg-black dark:bg-white;
+  @apply relative flex flex-col gap-2 w-7 h-[2px] bg-black dark:bg-white transition;
 
   &::after {
     content: '';
@@ -48,5 +48,17 @@
   &::before {
     content: '';
     @apply absolute top-[6px] w-7 h-[2px] bg-black z-10 dark:bg-white;
+  }
+
+  &.open {
+    @apply rotate-45;
+  }
+
+  &.open::after {
+    @apply bottom-0;
+  }
+
+  &.open::before {
+    @apply rotate-90 top-0;
   }
 }
