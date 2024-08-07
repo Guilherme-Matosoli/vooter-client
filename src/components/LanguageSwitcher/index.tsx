@@ -1,8 +1,12 @@
 "use client";
+import { useTranslation } from "@/app/i18n";
+import { languages } from "@/app/i18n/settings";
 import { useEffect, useRef, useState } from "react";
+import i18next from "i18next";
 
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation(i18next.language, "languageSwitcher");
 
   const elementRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -16,6 +20,13 @@ export function LanguageSwitcher() {
 
     return () => window.removeEventListener("click", handleClick);
   }, []);
+
+  const languagesList = languages.map(lng => {
+    return {
+      name: t(lng),
+      flag: `/flags/${lng}.svg`
+    };
+  });
 
   return (
     <div className="relative" ref={elementRef}>
