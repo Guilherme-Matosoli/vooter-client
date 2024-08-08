@@ -37,6 +37,10 @@
   }
 }
 
+.height-transition {
+  transition: max-height .3s, border .3s;
+}
+
 .menuIcon {
   @apply relative flex flex-col gap-2 w-7 h-[2px] bg-black dark:bg-white transition;
 
