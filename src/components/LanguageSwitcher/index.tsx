@@ -3,6 +3,7 @@ import { useTranslation } from "@/app/i18n";
 import { languages } from "@/app/i18n/settings";
 import { useEffect, useRef, useState } from "react";
 import i18next from "i18next";
+import { LanguageOption } from "../LanguageOption";
 
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
@@ -44,12 +45,13 @@ border-r-black border-b-black w-1 h-1 rotate-45 dark:border-r-white dark:border-
         </div>
       </section>
 
-      {
-        open && (
-          <section className="absolute top-full rounded-xl bg-white w-52 min-h-10 border border-black -translate-x-1/2">
-          </section>
-        )
-      }
+      <section className={`absolute top-full rounded-xl bg-white flex flex-col
+                           w-52 overflow-hidden height-transition
+                           -translate-x-1/2 ${open ? "max-h-52 border border-black" : "max-h-0"}`}
+      >
+        <LanguageOption />
+
+      </section>
     </div>
   );
 };
