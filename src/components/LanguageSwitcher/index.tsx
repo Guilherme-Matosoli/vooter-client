@@ -51,8 +51,8 @@ export function LanguageSwitcher() {
                            -translate-x-1/2 ${open ? "max-h-52 border border-gray-400" : "max-h-0"}`}
       >
         {
-          languagesList.map(lang => {
-            return (<LanguageOption key={lang.name} language={lang} />)
+          languagesList.map(language => {
+            return (<LanguageOption key={language.name} language={language} />)
           })
         }
       </section>
