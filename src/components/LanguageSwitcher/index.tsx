@@ -38,11 +38,6 @@ export function LanguageSwitcher() {
             alt="Language"
           />
         </button>
-
-        <div className={`border-[4px] border-t-transparent border-l-transparent
-                         border-r-black border-b-black w-1 h-1 rotate-45 dark:border-r-white 
-                         dark:border-b-white group-hover:rotate-[225deg] transition`}>
-        </div>
       </section>
 
       <section className={`absolute -bottom-32 -left-20 rounded-2xl bg-white flex flex-col
