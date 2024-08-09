@@ -1,4 +1,5 @@
 import { useTranslation } from "@/app/i18n";
+import { languages } from "@/app/i18n/settings";
 import i18next from "i18next";
 
 interface Language {
@@ -16,8 +17,20 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
   const { t } = useTranslation(i18next.language, "languages");
 
   const isLast = position == maxItems;
+
+  const actualPath = window.location.pathname;
+
+  const handleHref = () => {
+    let path = "";
+    languages.forEach(lang => {
+      if (actualPath.includes(lang)) path = actualPath.replace(lang, language.name);
+    });
+
+    return path;
+  };
+
   return (
-    <a href={`/${language.name}`} className={`w-full group transition flex items-center gap-2
+    <a href={handleHref()} className={`w-full group transition flex items-center gap-2
                   ${!isLast && "border-b border-gray-400"} py-3 cursor-pointer`
     }>
       <img
