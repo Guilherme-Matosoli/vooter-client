@@ -1,6 +1,7 @@
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { HeaderCTAs } from "./HeaderCTAs";
 import { MobileHeader } from "./MobileHeader";
+import { ThemeContextProvider } from "@/contexts/ThemeConxtex";
 
 export interface HeaderProps {
   lng: string
@@ -17,13 +18,16 @@ export function Header({ lng }: HeaderProps) {
         </a>
       </h1>
 
-      {
-        !matches
-          ?
-          <HeaderCTAs lng={lng} />
-          :
-          <MobileHeader lng={lng} />
-      }
+      <ThemeContextProvider>
+        {
+          !matches
+            ?
+            <HeaderCTAs lng={lng} />
+            :
+            <MobileHeader lng={lng} />
+        }
+      </ThemeContextProvider>
+
     </header>
   )
 }
