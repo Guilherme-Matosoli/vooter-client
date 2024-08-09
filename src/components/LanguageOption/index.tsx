@@ -38,7 +38,7 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
         className="w-7 h-7 rounded-full"
       />
 
-      <span className="group-hover:text-gray-400">
+      <span className="font-main font-semibold group-hover:text-gray-400">
         {t(language.name)}
       </span>
     </a>
