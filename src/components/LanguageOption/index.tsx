@@ -31,7 +31,7 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
 
   return (
     <a href={handleHref()} className={`w-full group transition flex items-center gap-2
-                  ${!isLast && "border-b border-gray-400"} py-3 cursor-pointer`
+                  ${!isLast && "border-b border-gray-200"} py-3 cursor-pointer`
     }>
       <img
         src={language.flag}
