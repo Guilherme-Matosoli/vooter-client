@@ -1,25 +1,24 @@
 import { useTranslation } from "@/app/i18n";
 import i18next from "i18next";
-import { ButtonHTMLAttributes } from "react";
 
 interface Language {
   name: string,
   flag: string
 };
 
-interface LanguageOptionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface LanguageOptionProps {
   language: Language,
   position: number,
   maxItems: number
 };
 
-export function LanguageOption({ language, position, maxItems, ...rest }: LanguageOptionProps) {
+export function LanguageOption({ language, position, maxItems }: LanguageOptionProps) {
   const { t } = useTranslation(i18next.language, "languages");
 
   const isLast = position == maxItems;
   return (
-    <button {...rest} className={`w-full group transition flex items-center gap-2
-                                ${!isLast && "border-b border-gray-400"} py-3`
+    <a href={`/${language.name}`} className={`w-full group transition flex items-center gap-2
+                  ${!isLast && "border-b border-gray-400"} py-3 cursor-pointer`
     }>
       <img
         src={language.flag}
@@ -29,6 +28,6 @@ export function LanguageOption({ language, position, maxItems, ...rest }: Langua
       <span className="group-hover:text-gray-400">
         {t(language.name)}
       </span>
-    </button>
+    </a>
   );
 };
