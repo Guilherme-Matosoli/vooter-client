@@ -48,10 +48,13 @@ export function LanguageSwitcher() {
 
       <section className={`absolute top-full rounded-xl bg-white flex flex-col
                            w-52 overflow-hidden height-transition
-                           -translate-x-1/2 ${open ? "max-h-52 border border-black" : "max-h-0"}`}
+                           -translate-x-1/2 ${open ? "max-h-52 border border-gray-400" : "max-h-0"}`}
       >
-        <LanguageOption />
-
+        {
+          languagesList.map(lang => {
+            return (<LanguageOption key={lang.name} language={lang} />)
+          })
+        }
       </section>
     </div>
   );
