@@ -46,13 +46,22 @@ export function LanguageSwitcher() {
         </div>
       </section>
 
-      <section className={`absolute top-full rounded-xl bg-white flex flex-col
-                           w-52 overflow-hidden height-transition
+      <section className={`absolute top-full rounded-2xl bg-white flex flex-col
+                           w-52 overflow-hidden height-transition px-3
                            -translate-x-1/2 ${open ? "max-h-52 border border-gray-400" : "max-h-0"}`}
       >
         {
-          languagesList.map(language => {
-            return (<LanguageOption key={language.name} language={language} />)
+          open && languagesList.map((language, index) => {
+            const itemPosition = index + 1;
+
+            return (
+              <LanguageOption
+                key={language.name}
+                language={language}
+                position={itemPosition}
+                maxItems={languagesList.length}
+              />
+            );
           })
         }
       </section>
