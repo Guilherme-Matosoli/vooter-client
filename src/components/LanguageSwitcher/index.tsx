@@ -32,11 +32,10 @@ export function LanguageSwitcher() {
   return (
     <div className="relative" ref={elementRef}>
       <section className="flex gap-2 items-center justify-center group">
-        <button onClick={() => setOpen(!open)} className="w-[30px] h-[30px] rounded-full  overflow-hidden">
+        <button onClick={() => setOpen(!open)} className="p-2 rounded-full hover:bg-gray-300 flex items-center justify-center">
           <img
-            src={`/flags/${i18next.language}.svg`}
+            src="/globe.svg"
             alt="Language"
-            className="object-fill"
           />
         </button>
 
