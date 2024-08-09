@@ -13,16 +13,20 @@ interface LanguageOptionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   maxItems: number
 };
 
-export function LanguageOption({ language, ...rest }: LanguageOptionProps) {
+export function LanguageOption({ language, position, maxItems, ...rest }: LanguageOptionProps) {
   const { t } = useTranslation(i18next.language, "languages");
+
+  const isLast = position == maxItems;
   return (
-    <button {...rest} className="w-full transition flex items-center gap-2 border-b border-gray-300 py-3">
+    <button {...rest} className={`w-full group transition flex items-center gap-2
+                                ${!isLast && "border-b border-gray-400"} py-3`
+    }>
       <img
         src={language.flag}
         className="w-7 h-7 rounded-full"
       />
 
-      <span>
+      <span className="group-hover:text-gray-400">
         {t(language.name)}
       </span>
     </button>
