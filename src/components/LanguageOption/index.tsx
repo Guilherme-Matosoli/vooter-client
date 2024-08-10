@@ -17,6 +17,7 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
   const { t } = useTranslation(i18next.language, "languages");
 
   const isLast = position == maxItems;
+  const isActualLanguage = language.name == i18next.language;
 
   const actualPath = window.location.pathname;
 
@@ -38,7 +39,9 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
         className="w-7 h-7 rounded-full"
       />
 
-      <span className="font-main font-semibold group-hover:text-gray-400">
+      <span className={`font-main font-semibold  ${isActualLanguage ? "text-black" : "text-gray-400"}
+                        group-hover:text-black`}
+      >
         {t(language.name)}
       </span>
     </a>
