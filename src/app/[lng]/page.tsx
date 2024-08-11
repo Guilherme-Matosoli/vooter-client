@@ -11,7 +11,7 @@ interface HomeParams {
 export default function Home({ params: { lng } }: HomeParams) {
   const { t } = useTranslation(lng, "home");
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6">
+    <main className="flex flex-1 flex-col items-center py-20 justify-center gap-6 md:gap-0 md:justify-between">
       <div className="w-full flex flex-col gap-5">
         <h2 className="font-main font-bold text-center text-4xl dark:text-white md:text-6xl">
           {t("mainText")}
