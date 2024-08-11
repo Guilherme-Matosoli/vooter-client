@@ -28,8 +28,8 @@ export function MobileHeader({ lng }: HeaderProps) {
       </button>
 
       <div className={`${open ? "fixed" : "hidden"} flex items-center justify-center flex-col
-                      absolute left-0 top-0 w-[calc(100vw-40px)] 
-h-[calc(100dvh-40px)] bg-white p-5 rounded-lg dark:bg-black`}
+                      gap-5 absolute left-0 top-0 w-[calc(100vw-40px)] 
+                      h-[calc(100dvh-40px)] bg-white p-5 rounded-lg dark:bg-black`}
       >
         <HeaderCTAs lng={lng} />
       </div>
