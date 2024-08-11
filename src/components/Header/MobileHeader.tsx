@@ -19,15 +19,18 @@ export function MobileHeader({ lng }: HeaderProps) {
   }, []);
 
   return (
-    <section ref={elementRef} className="flex items-center h-full relative">
+    <section ref={elementRef} className="flex items-center h-full">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-center h-[45px] w-[45px] rounded-full hover:bg-gray-200"
+        className="z-10 flex items-center justify-center h-[45px] w-[45px] rounded-full hover:bg-gray-200"
       >
         <span className={`menuIcon ${open && "open"}`}></span>
       </button>
 
-      <div className={`${open ? "flex" : "hidden"} flex-col absolute right-full top-full w-52 h-auto bg-red-200 p-5`}>
+      <div className={`${open ? "fixed" : "hidden"} flex items-center justify-center flex-col
+                      absolute left-0 top-0 w-[calc(100vw-40px)] 
+h-[calc(100dvh-40px)] bg-white p-5 rounded-lg dark:bg-black`}
+      >
         <HeaderCTAs lng={lng} />
       </div>
     </section>
