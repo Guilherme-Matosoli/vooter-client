@@ -60,5 +60,5 @@
 }
 
 .button {
-  @apply flex items-center justify-center w-full py-3 px-6 font-main font-bold text-xl rounded-lg;
+  @apply flex items-center justify-center w-full py-3 px-6 font-main font-bold text-xl rounded-lg hover:brightness-[0.9] transition;
 }
