@@ -13,14 +13,9 @@
 
   body {
     min-block-size: 100dvh;
-    @apply flex flex-col p-5 bg-light dark:bg-dark;
+    @apply flex flex-col justify-between p-5 m-auto bg-light dark:bg-dark;
+    width: min(100%, 1150px);
   }
-}
-
-.content {
-  flex: 1;
-  width: min(100%, 1150px);
-  margin: 0 auto;
 }
 
 .link {
