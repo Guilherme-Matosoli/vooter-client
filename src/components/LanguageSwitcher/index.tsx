@@ -34,7 +34,9 @@ export function LanguageSwitcher() {
   return (
     <div className="relative" ref={elementRef}>
       <section className="flex gap-2 items-center justify-center group">
-        <button onClick={() => setOpen(!open)} className="p-2 rounded-full hover:bg-gray-300 flex items-center justify-center">
+        <button onClick={() => setOpen(!open)}
+          className="p-2 rounded-full hover:bg-gray-300 flex items-center justify-center dark:hover:bg-gray-900"
+        >
           <img
             src={theme == "light" ? "/icons/globe.svg" : "/icons/globe-light.svg"}
             alt="Language"
