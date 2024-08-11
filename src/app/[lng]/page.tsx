@@ -25,6 +25,7 @@ export default function Home({ params: { lng } }: HomeParams) {
       <img
         src="/ilustration.svg"
         alt={t("ilustration")}
+        draggable={false}
       />
 
       <section className="w-full flex flex-col gap-3 items-center">
