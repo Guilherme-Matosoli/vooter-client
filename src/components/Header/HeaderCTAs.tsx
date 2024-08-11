@@ -8,7 +8,7 @@ export function HeaderCTAs({ lng }: HeaderProps) {
   const { t } = useTranslation(lng, "header");
   return (
     <>
-      <nav className="flex gap-8">
+      <nav className="flex gap-8 flex-col items-center md:flex-row">
         <Link className="link" href="/">
           {t("home")}
         </Link>
