@@ -44,7 +44,7 @@ export function LanguageSwitcher() {
         </button>
       </section>
 
-      <section className={`absolute left-1/2  md:-bottom-32 md:-left-20 rounded-2xl bg-white flex flex-col
+      <section className={`absolute left-1/2 -bottom-32 md:-left-20 rounded-2xl bg-white flex flex-col
                            w-52 overflow-hidden transition px-3
                           -translate-x-1/2 ${open ? "max-h-52 border border-gray-200" : "max-h-0"}
                           dark:bg-black dark:border-gray-900`}
