@@ -1,3 +1,4 @@
+"use client";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { HeaderCTAs } from "./HeaderCTAs";
 import { MobileHeader } from "./MobileHeader";
