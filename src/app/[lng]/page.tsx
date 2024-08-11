@@ -32,14 +32,14 @@ export default function Home({ params: { lng } }: HomeParams) {
         <Link href="/newpoll" className="button bg-black text-white dark:bg-white 
           dark:border dark:border-black dark:text-black"
         >
-          Comece uma nova enquete
+          {t("newPoll")}
         </Link>
 
 
         <Link href="/about" className="button bg-white text-black border border-black 
-          dark:bg-black dark:border-none dark:text-white md:w-52"
+          dark:bg-black dark:border-none dark:text-white md:w-60"
         >
-          Saiba mais
+          {t("about")}
         </Link>
       </section>
 
