@@ -17,7 +17,7 @@ export default function Home({ params: { lng } }: HomeParams) {
           {t("mainText")}
         </h2>
 
-        <h3 className="font-main font-bold text-center text-secLight dark:text-secDark">
+        <h3 className="font-main font-bold text-center text-secLight dark:text-secDark md:text-3xl md:w-2/3 md:m-auto">
           {t("secondaryText")}
         </h3>
       </div>
@@ -28,7 +28,7 @@ export default function Home({ params: { lng } }: HomeParams) {
         draggable={false}
       />
 
-      <section className="w-full flex flex-col gap-3 items-center">
+      <section className="w-full flex flex-col gap-3 items-center md:flex-row md:w-1/2">
         <Link href="/newpoll" className="button bg-black text-white dark:bg-white 
           dark:border dark:border-black dark:text-black"
         >
@@ -37,7 +37,7 @@ export default function Home({ params: { lng } }: HomeParams) {
 
 
         <Link href="/about" className="button bg-white text-black border border-black 
-          dark:bg-black dark:border-none dark:text-white"
+          dark:bg-black dark:border-none dark:text-white md:w-52"
         >
           Saiba mais
         </Link>
