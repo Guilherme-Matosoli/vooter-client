@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useTranslation } from "../i18n";
 
 interface HomeParams {
@@ -10,7 +11,7 @@ interface HomeParams {
 export default function Home({ params: { lng } }: HomeParams) {
   const { t } = useTranslation(lng, "home");
   return (
-    <main className="flex flex-1 flex-col items-center justify-center">
+    <main className="flex flex-1 flex-col items-center justify-center gap-6">
       <div className="w-full flex flex-col gap-5">
         <h2 className="font-main font-bold text-center text-4xl dark:text-white md:text-6xl">
           {t("mainText")}
@@ -25,6 +26,17 @@ export default function Home({ params: { lng } }: HomeParams) {
         src="/ilustration.svg"
         alt={t("ilustration")}
       />
+
+      <section className="w-full flex flex-col gap-3 items-center">
+        <Link href="/newpoll" className="button bg-black text-white hover:brightness-50 transition">
+          Comece uma nova enquete
+        </Link>
+
+
+        <Link href="/about" className="button bg-white text-black border border-black hover:brightness-50 transition">
+          Saiba mais
+        </Link>
+      </section>
 
     </main>
   );
