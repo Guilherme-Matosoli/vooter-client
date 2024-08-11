@@ -56,4 +56,9 @@
   &.open::before {
     @apply rotate-90 top-0;
   }
+
+}
+
+.button {
+  @apply flex items-center justify-center w-full py-3 px-6 font-main font-bold text-xl rounded-lg;
 }
