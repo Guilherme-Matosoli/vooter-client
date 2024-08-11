@@ -1,5 +1,4 @@
 "use client"
-import { Header } from "@/components/Header";
 import { useTranslation } from "../i18n";
 
 interface HomeParams {
