@@ -1,12 +1,14 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { languages } from "@/app/i18n/settings";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import i18next from "i18next";
 import { LanguageOption } from "../LanguageOption";
+import { ThemeContext } from "@/contexts/ThemeConxtex";
 
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
   const { t } = useTranslation(i18next.language, "languageSwitcher");
 
   const elementRef = useRef<HTMLDivElement>(null);
@@ -34,7 +36,7 @@ export function LanguageSwitcher() {
       <section className="flex gap-2 items-center justify-center group">
         <button onClick={() => setOpen(!open)} className="p-2 rounded-full hover:bg-gray-300 flex items-center justify-center">
           <img
-            src="/globe.svg"
+            src={theme == "light" ? "/icons/globe.svg" : "/icons/globe-light.svg"}
             alt="Language"
           />
         </button>
