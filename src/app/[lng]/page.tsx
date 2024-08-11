@@ -29,12 +29,16 @@ export default function Home({ params: { lng } }: HomeParams) {
       />
 
       <section className="w-full flex flex-col gap-3 items-center">
-        <Link href="/newpoll" className="button bg-black text-white">
+        <Link href="/newpoll" className="button bg-black text-white dark:bg-white 
+          dark:border dark:border-black dark:text-black"
+        >
           Comece uma nova enquete
         </Link>
 
 
-        <Link href="/about" className="button bg-white text-black border border-black">
+        <Link href="/about" className="button bg-white text-black border border-black 
+          dark:bg-black dark:border-none dark:text-white"
+        >
           Saiba mais
         </Link>
       </section>
