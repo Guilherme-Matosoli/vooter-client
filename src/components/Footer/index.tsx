@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useTranslation(i18next.language, "footer");
   return (
     <footer className="w-full flex justify-center">
-      <span className="font-main text-secondary text-lg">
+      <span className="font-main text-secondary text-lg text-center">
         &copy; {new Date().getFullYear()} Votter. {t("copy")}
       </span>
     </footer>
