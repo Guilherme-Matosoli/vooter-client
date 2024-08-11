@@ -1,9 +1,10 @@
 "use client";
+import { ThemeContext } from "@/contexts/ThemeConxtex";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
