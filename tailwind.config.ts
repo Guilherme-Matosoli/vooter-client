@@ -30,7 +30,10 @@ const config: Config = {
         "light": "#000",
         "dark": "#fff",
 
-        "secondary": "#6A6A6A"
+        "secLight": "#3F3F3F",
+        "secDark": "#B4B4B4",
+
+        "gray-light": "#6A6A6A",
       }
     },
   },
