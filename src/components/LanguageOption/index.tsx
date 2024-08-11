@@ -32,15 +32,18 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
 
   return (
     <a href={handleHref()} className={`w-full group transition flex items-center gap-2
-                  ${!isLast && "border-b border-gray-200"} py-3 cursor-pointer`
+                                      ${!isLast && "border-b border-gray-200 dark:border-gray-800"} 
+                                      py-3 cursor-pointer`
     }>
       <img
         src={language.flag}
         className="w-7 h-7 rounded-full"
       />
 
-      <span className={`font-main font-semibold  ${isActualLanguage ? "text-black" : "text-gray-400"}
-                        group-hover:text-black`}
+      <span className={`font-main font-semibold  ${isActualLanguage
+        ? "text-black dark:text-white"
+        : "text-gray-400 dark:text-gray-600"}
+group-hover:text-black dark:group-hover:text-white`}
       >
         {t(language.name)}
       </span>
