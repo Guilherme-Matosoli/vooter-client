@@ -23,6 +23,20 @@ export default function About({ params: { lng } }: AboutParams) {
       <h3 className="font-main font-bold text-2xl md:text-4xl dark:text-white">
         {t("whyUse")}
       </h3>
+
+      <article className="flex flex-col font-main font-normal md:text-2xl">
+        <p>
+          <strong>{t("simplicity")}</strong> {t("simplicityDesc")}
+        </p>
+
+        <p>
+          <strong></strong>
+        </p>
+
+        <p>
+          <strong></strong>
+        </p>
+      </article>
     </main>
   );
 };
