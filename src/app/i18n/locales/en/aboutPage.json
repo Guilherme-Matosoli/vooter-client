@@ -1,5 +1,7 @@
 {
   "mainText": "Meet the Votter",
   "description": "Votter is an application designed to make it easy to create and share polls in a simple and effective way. Ideal for both business and personal surveys, Votter allows you to engage your audience and get valuable feedback quickly.",
-  "whyUse": "Why use Votter?"
+  "whyUse": "Why use Votter?",
+  "simplicity": "Simplicity:",
+  "simplicityDesc": "Votter's intuitive interface makes creating and sharing polls extremely simple and fast, allowing you to set up your polls in minutes."
 }

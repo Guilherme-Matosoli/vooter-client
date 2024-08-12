@@ -1,5 +1,7 @@
 {
   "mainText": "Conheça o Votter",
   "description": "   Votter é uma aplicação projetada para facilitar a criação e o compartilhamento de enquetes de forma simples e eficaz. Ideal tanto para pesquisas empresariais quanto pessoais, Votter permite que você envolva seu público e obtenha feedback valioso rapidamente.",
-  "whyUse": "Por que usar o Votter?"
+  "whyUse": "Por que usar o Votter?",
+  "simplicity": "Simplicidade:",
+  "simplicityDesc": "A interface intuitiva do Votter torna a criação e o compartilhamento de enquetes extremamente simples e rápida, permitindo que você configure suas enquetes em minutos."
 }
