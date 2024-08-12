@@ -7,11 +7,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export function Input({ label, ...rest }: InputProps) {
   return (
     <section>
-      <label htmlFor={label}>
+      <label htmlFor={rest.name}>
         {label}
       </label>
 
-      <input name={label} />
-    </section>
+      <input {...rest} />
+    </section >
   );
 };
