@@ -6,12 +6,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ label, ...rest }: InputProps) {
   return (
-    <section>
-      <label htmlFor={rest.name}>
+    <section className="w-full flex flex-col gap-1">
+      <label
+        htmlFor={rest.name}
+        className="font-main font-semibold text-2xl dark:text-white"
+      >
         {label}
       </label>
 
-      <input {...rest} />
+      <input {...rest} id={rest.name} />
     </section >
   );
 };
