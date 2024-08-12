@@ -24,7 +24,7 @@ export default function About({ params: { lng } }: AboutParams) {
         {t("whyUse")}
       </h3>
 
-      <article className="flex flex-col font-main font-normal gap-3 md:text-2xl">
+      <article className="flex flex-col font-main font-normal gap-3 md:text-2xl dark:text-white">
         <p>
           <strong>{t("simplicity")}</strong> {t("simplicityDesc")}
         </p>
@@ -38,11 +38,14 @@ export default function About({ params: { lng } }: AboutParams) {
         </p>
       </article>
 
-      <section>
-        <h3>
+      <section className="font-main text-center w-full">
+        <h3 className="font-bold text-2xl md:text-3xl dark:text-white">
           {t("developedBy")}
         </h3>
-        <a>
+
+        <a href="https://www.linkedin.com/in/guilherme-matosoli/" target="_blank"
+          className="underline md:text-2xl dark:text-white"
+        >
           Guilherme Matos
         </a>
       </section>
