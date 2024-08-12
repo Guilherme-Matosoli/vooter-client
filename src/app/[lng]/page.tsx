@@ -29,7 +29,7 @@ export default function Home({ params: { lng } }: HomeParams) {
       />
 
       <section className="w-full flex flex-col gap-3 items-center md:flex-row md:w-1/2">
-        <Link href="/newpoll" className="button bg-black text-white dark:bg-white 
+        <Link href="/poll/new" className="button bg-black text-white dark:bg-white 
           dark:border dark:border-black dark:text-black"
         >
           {t("newPoll")}
