@@ -34,9 +34,18 @@ export default function About({ params: { lng } }: AboutParams) {
         </p>
 
         <p>
-          <strong>{t("enagement")}</strong> {t("engagementDesc")}
+          <strong>{t("engagement")}</strong> {t("engagementDesc")}
         </p>
       </article>
+
+      <section>
+        <h3>
+          {t("developedBy")}
+        </h3>
+        <a>
+          Guilherme Matos
+        </a>
+      </section>
     </main>
   );
 };
