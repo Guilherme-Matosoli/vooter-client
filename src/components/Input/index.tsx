@@ -1,16 +1,17 @@
 import { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-
+  label: string
 };
 
-export function Input({ ...rest }: InputProps) {
+export function Input({ label, ...rest }: InputProps) {
   return (
     <section>
-      <label>
+      <label htmlFor={label}>
+        {label}
       </label>
 
-      <input />
+      <input name={label} />
     </section>
   );
 };
