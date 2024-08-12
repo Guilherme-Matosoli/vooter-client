@@ -11,7 +11,7 @@ export default function About({ params: { lng } }: AboutParams) {
   const { t } = useTranslation(lng, "aboutPage");
 
   return (
-    <main className="flex flex-col py-20">
+    <main className="flex flex-col py-20 gap-5">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
         {t("mainText")}
       </h2>
@@ -24,17 +24,17 @@ export default function About({ params: { lng } }: AboutParams) {
         {t("whyUse")}
       </h3>
 
-      <article className="flex flex-col font-main font-normal md:text-2xl">
+      <article className="flex flex-col font-main font-normal gap-3 md:text-2xl">
         <p>
           <strong>{t("simplicity")}</strong> {t("simplicityDesc")}
         </p>
 
         <p>
-          <strong></strong>
+          <strong>{t("versatility")}</strong> {t("versatilityDesc")}
         </p>
 
         <p>
-          <strong></strong>
+          <strong>{t("enagement")}</strong> {t("engagementDesc")}
         </p>
       </article>
     </main>
