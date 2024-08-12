@@ -16,11 +16,11 @@ export default function About({ params: { lng } }: AboutParams) {
         {t("mainText")}
       </h2>
 
-      <p className="font-main font-normal md:text-2xl">
+      <p className="font-main font-normal md:text-2xl dark:text-white">
         {t("description")}
       </p>
 
-      <h3 className="font-main font-bold text-2xl md:text-4xl">
+      <h3 className="font-main font-bold text-2xl md:text-4xl dark:text-white">
         {t("whyUse")}
       </h3>
     </main>
