@@ -14,7 +14,12 @@ export function Input({ label, ...rest }: InputProps) {
         {label}
       </label>
 
-      <input {...rest} id={rest.name} />
+      <input
+        className="font-main outline-none p-5 rounded-lg border border-black
+        bg-white dark:bg-black dark:text-white dark:border-white"
+        {...rest}
+        id={rest.name}
+      />
     </section >
   );
 };
