@@ -1,6 +1,8 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Input } from "@/components/Input";
+import { PollContext } from "@/contexts/PollContext";
+import { useContext } from "react";
 
 interface NewPollParams {
   params: {
@@ -10,6 +12,7 @@ interface NewPollParams {
 
 export default function NewPoll({ params: { lng } }: NewPollParams) {
   const { t } = useTranslation(lng, "createPoll");
+  const { title, setTitle } = useContext(PollContext);
 
   return (
     <main className="flex flex-1 items-center flex-col py-20">
@@ -21,6 +24,8 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         name="title"
         label="Título:"
         placeholder="Digite o título"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
       />
     </main>
   );
