@@ -7,6 +7,7 @@ interface Option {
 
 interface PollContextProps {
   title: string,
+  setTitle: Dispatch<SetStateAction<string>>,
   options: Option[],
   setOptions: Dispatch<SetStateAction<Option[]>>
 };
@@ -14,10 +15,11 @@ interface PollContextProps {
 export const PollContext = createContext({} as PollContextProps);
 
 export function PollContextProvider({ children }: { children: React.ReactNode }) {
+  const [title, setTitle] = useState("");
   const [options, setOptions] = useState<Option[]>([]);
 
   return (
-    <PollContext.Provider value={{ title: "", options, setOptions }}>
+    <PollContext.Provider value={{ title, setTitle, options, setOptions }}>
       {children}
     </PollContext.Provider>
   )
