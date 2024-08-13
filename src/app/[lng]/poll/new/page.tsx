@@ -21,11 +21,18 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
       option: "Opção 1"
     }
   ]);
+
   return (
     <main className="flex flex-1 items-center flex-col py-20">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
         {t("createNewPoll")}
       </h2>
+
+      <Input
+        name="title"
+        label="Título:"
+        placeholder="Digite o título"
+      />
     </main>
   );
 };
