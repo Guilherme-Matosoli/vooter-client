@@ -1,12 +1,14 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 
 interface Option {
   option: string
 }
 
 interface PollContextProps {
-  options: Option[]
+  title: string,
+  options: Option[],
+  setOptions: Dispatch<SetStateAction<Option[]>>
 };
 
 export const PollContext = createContext({} as PollContextProps);
@@ -15,7 +17,7 @@ export function PollContextProvider({ children }: { children: React.ReactNode })
   const [options, setOptions] = useState<Option[]>([]);
 
   return (
-    <PollContext.Provider value={{ options }}>
+    <PollContext.Provider value={{ title: "", options, setOptions }}>
       {children}
     </PollContext.Provider>
   )
