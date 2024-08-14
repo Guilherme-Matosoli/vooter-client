@@ -35,11 +35,13 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         {t("createNewPoll")}
       </h2>
 
-      <Input
-        label="Título:"
-        placeholder="Digite o título"
-        {...register("title")}
-      />
+      <form>
+        <Input
+          label="Título:"
+          placeholder="Digite o título"
+          {...register("title", { required: true })}
+        />
+      </form>
     </main>
   );
 };
