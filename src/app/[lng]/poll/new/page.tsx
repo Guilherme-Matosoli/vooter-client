@@ -20,7 +20,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
   const { control, handleSubmit, register } = useForm<FormFields>({
     defaultValues: {
       title: "",
-      questions: [{ option: '' }]
+      questions: [{ option: '' }, { option: '' }]
     },
   });
 
