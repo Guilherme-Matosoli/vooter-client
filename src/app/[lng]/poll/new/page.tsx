@@ -24,6 +24,11 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
     },
   });
 
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "questions"
+  });
+
   return (
     <main className="flex flex-1 items-center flex-col py-20">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
@@ -31,9 +36,9 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
       </h2>
 
       <Input
-        name="title"
         label="Título:"
         placeholder="Digite o título"
+        {...register("title")}
       />
     </main>
   );
