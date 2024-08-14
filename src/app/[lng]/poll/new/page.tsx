@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Input } from "@/components/Input";
+import { useForm, useFieldArray } from "react-hook-form";
 
 interface NewPollParams {
   params: {
@@ -8,8 +9,20 @@ interface NewPollParams {
   };
 };
 
+interface FormFields {
+  title: string,
+  questions: { option: string }[]
+};
+
 export default function NewPoll({ params: { lng } }: NewPollParams) {
   const { t } = useTranslation(lng, "createPoll");
+
+  const { control, handleSubmit, register } = useForm<FormFields>({
+    defaultValues: {
+      title: "",
+      questions: [{ option: '' }]
+    },
+  });
 
   return (
     <main className="flex flex-1 items-center flex-col py-20">
