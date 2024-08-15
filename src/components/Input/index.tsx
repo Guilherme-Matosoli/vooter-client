@@ -1,10 +1,11 @@
-import { InputHTMLAttributes } from "react";
+import { forwardRef, InputHTMLAttributes, Ref } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string
 };
 
-export function Input({ label, ...rest }: InputProps) {
+export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) => {
+  const { label, ...rest } = props;
   return (
     <section className="w-full flex flex-col gap-1">
       <label
@@ -19,7 +20,8 @@ export function Input({ label, ...rest }: InputProps) {
         bg-white dark:bg-black dark:text-white dark:border-white"
         {...rest}
         id={rest.name}
+        ref={ref}
       />
     </section >
   );
-};
+})
