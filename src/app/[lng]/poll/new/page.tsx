@@ -35,9 +35,12 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         {t("createNewPoll")}
       </h2>
 
-      <form>
+      <form
+        onSubmit={handleSubmit(e => console.log(e))}
+        className="w-full"
+      >
         <Input
-          label="Título:"
+          label="Titulo: "
           placeholder="Digite o título"
           {...register("title", { required: true })}
         />
