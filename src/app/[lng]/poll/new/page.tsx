@@ -44,6 +44,16 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
           placeholder="Digite o título"
           {...register("title", { required: true })}
         />
+
+        {
+          fields.map((option, index) => {
+            return <Input
+              label=""
+              placeholder=""
+              {...option}
+            />
+          })
+        }
       </form>
     </main>
   );
