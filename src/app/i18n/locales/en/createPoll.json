@@ -3,5 +3,9 @@
   "labels": {
     "title": "Title:",
     "option": "Option"
+  },
+  "placeholder": {
+    "title": "Enter the poll title",
+    "option": "Enter the option"
   }
 }

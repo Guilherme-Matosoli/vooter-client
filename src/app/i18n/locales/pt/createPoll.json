@@ -3,5 +3,9 @@
   "labels": {
     "title": "Título:",
     "option": "Opção:"
+  },
+  "placeholder": {
+    "title": "Digite o título da enquete",
+    "option": "Digite a opção"
   }
 }
