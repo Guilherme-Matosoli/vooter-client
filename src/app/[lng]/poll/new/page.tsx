@@ -51,7 +51,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
 
             return <Input
               label={`${t("label.option")} ${index + 1}`}
-              placeholder={`${t("placeholder.option")} + ${index + 1}`}
+              placeholder={`${t("placeholder.option")} ${index + 1}`}
               {...option}
             />
           })
