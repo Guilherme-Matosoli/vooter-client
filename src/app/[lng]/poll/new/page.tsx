@@ -51,9 +51,10 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
 
             return (
               <Input
+                key={option.id}
                 label={`${t("label.option")} ${index + 1}`}
                 placeholder={`${t("placeholder.option")} ${index + 1}`}
-                {...option}
+                {...register(`questions.${index}.option`)}
               />
             )
           })
