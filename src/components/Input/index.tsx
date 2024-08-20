@@ -27,7 +27,7 @@ export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) 
         <button className="p-5 aspect-square flex items-center justify-center bg-white
           rounded-lg border border-black cursor-pointer hover:bg-gray-200"
         >
-          -
+          <span className="w-5 h-[1px] bg-black"></span>
         </button>
       </div>
     </section >
