@@ -15,13 +15,19 @@ export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) 
         {props.label}
       </label>
 
-      <input
-        className="font-main outline-none p-5 rounded-lg border border-black
+      <div className="w-full h-auto flex items-center gap-3">
+        <input
+          className="font-main w-full outline-none p-5 rounded-lg border border-black
         bg-white dark:bg-black dark:text-white dark:border-white"
-        {...props}
-        id={props.name}
-        ref={ref}
-      />
+          {...props}
+          id={props.name}
+          ref={ref}
+        />
+
+        <button className="p-5 aspect-square flex items-center justify-center bg-white">
+          -
+        </button>
+      </div>
     </section >
   );
 })
