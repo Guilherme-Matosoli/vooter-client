@@ -40,7 +40,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         className="w-full"
       >
         <Input
-          label="Titulo: "
+          label={t("labels.title")}
           placeholder="Digite o título"
           {...register("title", { required: true })}
         />
