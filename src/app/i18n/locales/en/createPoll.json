@@ -1,6 +1,6 @@
 {
   "createNewPoll": "Create new poll",
-  "labels": {
+  "label": {
     "title": "Title:",
     "option": "Option"
   },
