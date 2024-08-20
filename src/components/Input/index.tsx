@@ -2,7 +2,8 @@ import { forwardRef, InputHTMLAttributes, Ref } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string,
-  hasDelButton?: boolean;
+  hasDelButton?: boolean,
+  onClick?: () => void
 };
 
 export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) => {
@@ -29,6 +30,7 @@ export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) 
             <button className="p-5 aspect-square flex items-center justify-center bg-white
               rounded-lg border border-black cursor-pointer hover:bg-gray-200
               dark:bg-black dark:text-white dark:hover:bg-gray-800 dark:border-white"
+              onClick={props.onClick}
             >
               <span className="w-5 h-[1px] bg-black dark:bg-white"></span>
             </button>
