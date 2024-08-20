@@ -30,7 +30,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
   });
 
   return (
-    <main className="flex flex-1 items-center flex-col py-20 gap-5">
+    <main className="flex flex-1 items-center justify-center flex-col py-5 gap-5">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
         {t("createNewPoll")}
       </h2>
