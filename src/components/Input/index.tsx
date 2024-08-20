@@ -25,9 +25,10 @@ export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) 
         />
 
         <button className="p-5 aspect-square flex items-center justify-center bg-white
-          rounded-lg border border-black cursor-pointer hover:bg-gray-200"
+          rounded-lg border border-black cursor-pointer hover:bg-gray-200
+          dark:bg-black dark:text-white dark:hover:bg-gray-800 dark:border-white"
         >
-          <span className="w-5 h-[1px] bg-black"></span>
+          <span className="w-5 h-[1px] bg-black dark:bg-white"></span>
         </button>
       </div>
     </section >
