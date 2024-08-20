@@ -30,14 +30,14 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
   });
 
   return (
-    <main className="flex flex-1 items-center flex-col py-20">
+    <main className="flex flex-1 items-center flex-col py-20 gap-5">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
         {t("createNewPoll")}
       </h2>
 
       <form
         onSubmit={handleSubmit(e => console.log(e))}
-        className="w-full"
+        className="w-full flex flex-col gap-5"
       >
         <Input
           label={t("label.title")}
