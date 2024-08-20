@@ -49,11 +49,13 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
           fields.map((option, index) => {
             const hasDelOptionButton = index > 1;
 
-            return <Input
-              label={`${t("label.option")} ${index + 1}`}
-              placeholder={`${t("placeholder.option")} ${index + 1}`}
-              {...option}
-            />
+            return (
+              <Input
+                label={`${t("label.option")} ${index + 1}`}
+                placeholder={`${t("placeholder.option")} ${index + 1}`}
+                {...option}
+              />
+            )
           })
         }
       </form>
