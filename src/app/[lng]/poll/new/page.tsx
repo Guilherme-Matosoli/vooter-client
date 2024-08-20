@@ -40,8 +40,8 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         className="w-full"
       >
         <Input
-          label={t("labels.title")}
-          placeholder="Digite o título"
+          label={t("label.title")}
+          placeholder={t("placeholder.title")}
           {...register("title", { required: true })}
         />
 
@@ -50,8 +50,8 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
             const hasDelOptionButton = index > 1;
 
             return <Input
-              label={`${t("labels.option")} ${index + 1}`}
-              placeholder=""
+              label={`${t("label.option")} ${index + 1}`}
+              placeholder={`${t("placeholder.option")} + ${index + 1}`}
               {...option}
             />
           })
