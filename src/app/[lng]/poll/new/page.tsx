@@ -55,6 +55,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
                 label={`${t("label.option")} ${index + 1}`}
                 placeholder={`${t("placeholder.option")} ${index + 1}`}
                 hasDelButton={hasDelButton}
+                onClick={() => remove(index)}
                 {...register(`questions.${index}.option`)}
               />
             )
