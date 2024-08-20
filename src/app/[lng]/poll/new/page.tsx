@@ -50,7 +50,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
             const hasDelOptionButton = index > 1;
 
             return <Input
-              label=""
+              label={`${t("labels.option")} ${index + 1}`}
               placeholder=""
               {...option}
             />
