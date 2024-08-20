@@ -47,13 +47,14 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
 
         {
           fields.map((option, index) => {
-            const hasDelOptionButton = index > 1;
+            const hasDelButton = index > 1;
 
             return (
               <Input
                 key={option.id}
                 label={`${t("label.option")} ${index + 1}`}
                 placeholder={`${t("placeholder.option")} ${index + 1}`}
+                hasDelButton={hasDelButton}
                 {...register(`questions.${index}.option`)}
               />
             )
