@@ -63,16 +63,15 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
         }
 
         <section className="w-full flex flex-col gap-3 items-center md:flex-row md:w-1/2">
-          <button className="button bg-black text-white dark:bg-white 
-          dark:border dark:border-black dark:text-black"
+          <button className="button bg-white text-black border border-black 
+          dark:bg-black dark:border-none dark:text-white md:w-60"
             onClick={() => append({ option: "" })}
           >
             Adicionar opção
           </button>
 
-
-          <button className="button bg-white text-black border border-black 
-          dark:bg-black dark:border-none dark:text-white md:w-60"
+          <button className="button bg-black text-white dark:bg-white 
+          dark:border dark:border-black dark:text-black"
           >
             Avançar
           </button>
