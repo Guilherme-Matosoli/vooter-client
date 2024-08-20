@@ -7,6 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 };
 
 export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) => {
+  const { hasDelButton, ...rest } = props;
   return (
     <section className="w-full flex flex-col gap-1">
       <label
@@ -20,7 +21,7 @@ export const Input = forwardRef((props: InputProps, ref: Ref<HTMLInputElement>) 
         <input
           className="font-main w-full outline-none p-5 rounded-lg border border-black
         bg-white dark:bg-black dark:text-white dark:border-white"
-          {...props}
+          {...rest}
           id={props.name}
           ref={ref}
         />
