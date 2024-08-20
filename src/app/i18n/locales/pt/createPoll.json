@@ -1,3 +1,7 @@
 {
-  "createNewPoll": "Criar nova enquete"
+  "createNewPoll": "Criar nova enquete",
+  "labels": {
+    "title": "Título:",
+    "option": "Opção:"
+  }
 }
