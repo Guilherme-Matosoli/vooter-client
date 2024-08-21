@@ -21,7 +21,8 @@ export function Radio({ ...props }: RadioProps) {
         hidden
       />
 
-      <span className="check w-[30px] h-[30px] absolute top-0 left-0 bg-light rounded-full border border-black">
+      <span className="check w-[30px] h-[30px] absolute top-0 left-0 bg-light 
+                      rounded-full border border-black dark:bg-dark dark:border-white">
       </span>
     </section>
   )

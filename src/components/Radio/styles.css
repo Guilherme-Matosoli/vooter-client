@@ -1,5 +1,3 @@
 .container:has(input:checked) .check {
   @apply bg-black dark:bg-white;
 }
-
-.check {}
