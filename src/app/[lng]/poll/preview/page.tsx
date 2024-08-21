@@ -25,14 +25,21 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
       <section className="w-full flex items-center justify-center flex-col gap-5 bg-white p-5 rounded-lg
                           dark:bg-black"
       >
-        <h2 className="font-main font-semibold text-3xl dark:text-white">
-          {fields.title || "Building"}
+        <h2 className="font-main font-semibold text-3xl dark:text-white break-words w-2/3 text-center">
+          {fields.title || "ASDJKFHASDFJHADSFHUASDFGHUADFGHSUAPDFHSUASDHUFASFHU"}
         </h2>
 
         <div className="flex flex-col w-full gap-2">
-          <Option />
-          <Option />
-          <Option />
+          {
+            fields.questions.map(question => {
+              return (
+                <Option
+                  option={question.option}
+                  id={question.option}
+                />
+              )
+            })
+          }
         </div>
       </section>
     </main>
