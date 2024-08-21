@@ -1,5 +1,5 @@
 import { api } from "@/services/api";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 interface UseFetchProps {
   path: string,
@@ -19,7 +19,7 @@ export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<T | null>(null);
 
-  async function execute() {
+  const execute = useCallback(async () => {
     setLoading(true);
 
     try {
@@ -39,7 +39,7 @@ export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> 
       setError(new Error("Unknown error"));
     }
     finally { setLoading(false) };
-  };
+  }, [path, method]);
 
   return [execute, data, loading, error];
 };
