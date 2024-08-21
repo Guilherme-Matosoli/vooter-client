@@ -8,16 +8,16 @@ interface UseFetchProps {
 
 type UseFetchReturn<T> = [
   execute: () => Promise<void>,
-  T,
+  T | null,
   boolean,
   Error | null
 ];
 
 
 export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> {
-  const [error, setError] = useState<unknown>();
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState<T | null>(null);
 
   async function execute() {
     setLoading(true);
@@ -31,10 +31,15 @@ export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> 
       setData(response.data);
     }
     catch (err) {
-      setError(err);
+      if (err instanceof Error) {
+        setError(err);
+        return;
+      };
+
+      setError(new Error("Unknown error"));
     }
     finally { setLoading(false) };
   };
 
-  return [execute, data as T, loading, error as Error];
+  return [execute, data, loading, error];
 };
