@@ -1,6 +1,8 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Input } from "@/components/Input";
+import { FormFields } from "@/contexts/PolllContext";
+
 import { useForm, useFieldArray } from "react-hook-form";
 
 interface NewPollParams {
@@ -9,10 +11,6 @@ interface NewPollParams {
   };
 };
 
-interface FormFields {
-  title: string,
-  questions: { option: string }[]
-};
 
 export default function NewPoll({ params: { lng } }: NewPollParams) {
   const { t } = useTranslation(lng, "createPoll");
