@@ -1,12 +1,17 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 
 export interface FormFields {
   title: string,
   questions: { option: string }[]
 };
 
-export const PollContext = createContext({} as FormFields);
+interface ContextProps {
+  fields: FormFields,
+  setFields: Dispatch<SetStateAction<FormFields>>
+};
+
+export const PollContext = createContext({} as ContextProps);
 
 export function PollContextProvider({ children }: { children: React.ReactNode }) {
   const [fields, setFields] = useState<FormFields>({
@@ -15,7 +20,7 @@ export function PollContextProvider({ children }: { children: React.ReactNode })
   });
 
   return (
-    <PollContext.Provider value={{ title: fields?.title, questions: fields?.questions }}>
+    <PollContext.Provider value={{ fields, setFields }}>
       {children}
     </PollContext.Provider>
   );
