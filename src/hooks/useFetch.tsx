@@ -1,4 +1,4 @@
-import axios from "axios";
+import { api } from "@/services/api";
 import { useState } from "react";
 
 interface UseFetchProps {
@@ -13,7 +13,6 @@ type UseFetchReturn<T> = [
   Error | null
 ];
 
-const api = axios.create({ baseURL: process.env.NEXT_PUBLIC_API_URL });
 
 export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> {
   const [error, setError] = useState<unknown>();
