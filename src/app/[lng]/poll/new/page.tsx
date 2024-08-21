@@ -44,7 +44,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
 
       <form
         onSubmit={handleSubmit(saveDataInContext)}
-        className="w-full flex flex-col gap-5"
+        className="w-full flex flex-col items-center gap-5 md:gap-10"
       >
         <Input
           label={t("label.title")}
@@ -71,7 +71,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
 
         <section className="w-full flex flex-col gap-3 items-center md:flex-row md:w-1/2">
           <button className="button bg-white text-black border border-black 
-          dark:bg-black dark:border-none dark:text-white md:w-60"
+          dark:bg-black dark:border-none dark:text-white"
             onClick={() => append({ option: "" })}
           >
             Adicionar opção
