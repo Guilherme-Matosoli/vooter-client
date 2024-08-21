@@ -74,13 +74,13 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
           dark:bg-black dark:border-none dark:text-white"
             onClick={() => append({ option: "" })}
           >
-            Adicionar opção
+            {t("button.addOption")}
           </button>
 
           <button className="button bg-black text-white dark:bg-white 
           dark:border dark:border-black dark:text-black"
           >
-            Avançar
+            {t("button.continue")}
           </button>
         </section>
       </form>
