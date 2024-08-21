@@ -1,3 +1,7 @@
 {
-  "mainTitle": "Preview"
+  "mainTitle": "Preview",
+  "button": {
+    "back": "Back",
+    "create": "Create poll"
+  }
 }

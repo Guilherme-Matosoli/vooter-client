@@ -1,3 +1,7 @@
 {
-  "mainTitle": "Visualização"
+  "mainTitle": "Visualização",
+  "button": {
+    "back": "Voltar",
+    "create": "Criar enquete"
+  }
 }
