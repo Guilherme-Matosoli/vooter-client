@@ -12,7 +12,7 @@ export function Header({ lng }: HeaderProps) {
   const matches = useMediaQuery(768);
 
   return (
-    <header className="relative flex justify-between items-center w-full bg-white dark:bg-black py-4 px-5 rounded-lg">
+    <header className="relative z-10 flex justify-between items-center w-full bg-white dark:bg-black py-4 px-5 rounded-lg">
       <a href="/" className="z-10 font-main font-bold text-2xl text-light dark:text-dark">
         Votter
       </a>
