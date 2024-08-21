@@ -7,5 +7,9 @@
   "placeholder": {
     "title": "Enter the poll title",
     "option": "Enter the option"
+  },
+  "button": {
+    "addOption": "Add new option",
+    "continue": "Continue"
   }
 }

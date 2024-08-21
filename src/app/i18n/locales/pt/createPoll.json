@@ -7,5 +7,9 @@
   "placeholder": {
     "title": "Digite o título da enquete",
     "option": "Digite a opção"
+  },
+  "button": {
+    "addOption": "Adicionar nova opção",
+    "continue": "Avançar"
   }
 }
