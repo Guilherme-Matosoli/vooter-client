@@ -1,7 +1,9 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Input } from "@/components/Input";
-import { FormFields } from "@/contexts/PolllContext";
+import { FormFields, PollContext } from "@/contexts/PolllContext";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
 import { useForm, useFieldArray } from "react-hook-form";
 
@@ -27,6 +29,13 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
     name: "questions"
   });
 
+  const { setFields } = useContext(PollContext);
+  const router = useRouter();
+  function saveDataInContext(data: FormFields) {
+    setFields(data);
+    router.push("/poll/preview");
+  };
+
   return (
     <main className="flex flex-1 items-center justify-center flex-col py-5 gap-5">
       <h2 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
@@ -34,7 +43,7 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
       </h2>
 
       <form
-        onSubmit={handleSubmit(e => console.log(e))}
+        onSubmit={handleSubmit(saveDataInContext)}
         className="w-full flex flex-col gap-5"
       >
         <Input
