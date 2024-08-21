@@ -25,7 +25,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
       <section className="w-full flex items-center justify-center flex-col gap-5 bg-white p-5 rounded-lg
                           dark:bg-black"
       >
-        <h2 className="font-main font-semibold text-3xl">
+        <h2 className="font-main font-semibold text-3xl dark:text-white">
           {fields.title || "Building"}
         </h2>
 
