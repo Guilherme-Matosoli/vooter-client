@@ -6,7 +6,7 @@ export interface FormFields {
   questions: { option: string }[]
 };
 
-const PollContext = createContext({} as FormFields);
+export const PollContext = createContext({} as FormFields);
 
 export function PollContextProvider({ children }: { children: React.ReactNode }) {
   const [fields, setFields] = useState<FormFields>({
