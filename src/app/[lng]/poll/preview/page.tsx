@@ -3,6 +3,7 @@ import { useTranslation } from "@/app/i18n";
 import { Option } from "@/components/Option";
 import { PollContext } from "@/contexts/PolllContext";
 import { usePrivateRoute } from "@/hooks/usePrivateRoute";
+import Link from "next/link";
 
 import { useContext } from "react";
 
@@ -52,11 +53,11 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
           {t("button.create")}
         </button>
 
-        <button className="button bg-black text-white dark:bg-white 
+        <Link href="/poll/new" className="button bg-black text-white dark:bg-white 
           dark:border dark:border-black dark:text-black"
         >
           {t("button.back")}
-        </button>
+        </Link>
       </section>
 
     </main>
