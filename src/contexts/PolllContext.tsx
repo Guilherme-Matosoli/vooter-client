@@ -7,20 +7,20 @@ export interface FormFields {
 };
 
 interface ContextProps {
-  fields: FormFields,
-  setFields: Dispatch<SetStateAction<FormFields>>
+  formFields: FormFields,
+  setFormFields: Dispatch<SetStateAction<FormFields>>
 };
 
 export const PollContext = createContext({} as ContextProps);
 
 export function PollContextProvider({ children }: { children: React.ReactNode }) {
-  const [fields, setFields] = useState<FormFields>({
-    title: '',
-    questions: []
-  });
+  const [formFields, setFormFields] = useState<FormFields>({
+    title: "",
+    questions: [{ option: '' }, { option: '' }]
+  },);
 
   return (
-    <PollContext.Provider value={{ fields, setFields }}>
+    <PollContext.Provider value={{ formFields, setFormFields }}>
       {children}
     </PollContext.Provider>
   );
