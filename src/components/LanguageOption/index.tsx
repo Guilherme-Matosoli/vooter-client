@@ -23,6 +23,9 @@ export function LanguageOption({ language, position, maxItems }: LanguageOptionP
 
   const handleHref = () => {
     let path = "";
+
+    if (isActualLanguage) return "#";
+
     languages.forEach(lang => {
       if (actualPath.includes(lang)) path = actualPath.replace(lang, language.name);
     });
