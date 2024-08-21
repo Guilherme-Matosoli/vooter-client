@@ -16,12 +16,11 @@ interface NewPollParams {
 
 export default function NewPoll({ params: { lng } }: NewPollParams) {
   const { t } = useTranslation(lng, "createPoll");
+  const { formFields, setFormFields } = useContext(PollContext);
+
 
   const { control, handleSubmit, register } = useForm<FormFields>({
-    defaultValues: {
-      title: "",
-      questions: [{ option: '' }, { option: '' }]
-    },
+    defaultValues: formFields
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -29,10 +28,9 @@ export default function NewPoll({ params: { lng } }: NewPollParams) {
     name: "questions"
   });
 
-  const { setFields } = useContext(PollContext);
   const router = useRouter();
   function saveDataInContext(data: FormFields) {
-    setFields(data);
+    setFormFields(data);
     router.push("/poll/preview");
   };
 

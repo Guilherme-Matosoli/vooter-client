@@ -16,8 +16,8 @@ interface PollPreviewProps {
 export default function PollPreview({ params: { lng } }: PollPreviewProps) {
   const { t } = useTranslation(lng, "pollPreview");
 
-  const { fields } = useContext(PollContext);
-  const valid = usePrivateRoute({ condition: fields.title.length > 1 });
+  const { formFields } = useContext(PollContext);
+  const valid = usePrivateRoute({ condition: formFields.title.length > 1 });
 
   return valid && (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
@@ -29,12 +29,12 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
                           dark:bg-black"
       >
         <h2 className="font-main font-semibold text-3xl dark:text-white break-words w-2/3 text-center">
-          {fields.title}
+          {formFields.title}
         </h2>
 
         <div className="flex flex-col w-full gap-2">
           {
-            fields.questions.map(question => {
+            formFields.questions.map(question => {
               return (
                 <Option
                   option={question.option}
