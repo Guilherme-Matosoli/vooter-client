@@ -26,7 +26,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
                           dark:bg-black"
       >
         <h2 className="font-main font-semibold text-3xl dark:text-white break-words w-2/3 text-center">
-          {fields.title || "ASDJKFHASDFJHADSFHUASDFGHUADFGHSUAPDFHSUASDHUFASFHU"}
+          {fields.title}
         </h2>
 
         <div className="flex flex-col w-full gap-2">
