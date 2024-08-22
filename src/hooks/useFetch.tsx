@@ -3,7 +3,8 @@ import { useCallback, useState } from "react";
 
 interface UseFetchProps {
   path: string,
-  method: "get" | "post" | "put" | "delete"
+  method: "get" | "post" | "put" | "delete",
+  body?: any
 };
 
 interface UseFetchReturn<T> {
@@ -14,7 +15,7 @@ interface UseFetchReturn<T> {
 };
 
 
-export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> {
+export function useFetch<T>({ path, method, body }: UseFetchProps): UseFetchReturn<T> {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<T | null>(null);
@@ -25,7 +26,8 @@ export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> 
     try {
       const response = await api.request({
         url: path,
-        method
+        method,
+        data: body && body
       });
 
       setData(response.data);
