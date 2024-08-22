@@ -5,7 +5,6 @@ import Rings from "@/components/Rings";
 import { FormFields, PollContext } from "@/contexts/PolllContext";
 import { useFetch } from "@/hooks/useFetch";
 import { usePrivateRoute } from "@/hooks/usePrivateRoute";
-import axios from "axios";
 import Link from "next/link";
 
 import { useContext, useEffect } from "react";
@@ -22,11 +21,13 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
   const { formFields } = useContext(PollContext);
   const valid = usePrivateRoute({ condition: formFields.title.length > 1 });
 
-  const { execute, data, loading, error } = useFetch<FormFields>({
+  const { execute, data, loading } = useFetch<{ id: string }>({
     path: "/poll/create",
     method: "post",
     body: formFields
   });
+
+  if (data?.id) window.location.href = `${lng}/poll/${data.id}`;
 
   return valid && (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
@@ -70,6 +71,10 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
         >
           {t("button.back")}
         </Link>
+
+        <span className="font-main font-normal text-center text-red-400 dark:text-red-200">
+          Ocorreu um erro, por favor tente novamente mais tarde
+        </span>
       </section>
     </main>
   );
