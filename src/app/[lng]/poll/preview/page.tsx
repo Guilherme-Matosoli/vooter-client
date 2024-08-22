@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Option } from "@/components/Option";
+import Rings from "@/components/Rings";
 import { FormFields, PollContext } from "@/contexts/PolllContext";
 import { useFetch } from "@/hooks/useFetch";
 import { usePrivateRoute } from "@/hooks/usePrivateRoute";
@@ -8,7 +9,6 @@ import axios from "axios";
 import Link from "next/link";
 
 import { useContext, useEffect } from "react";
-import Rings from "react-loading-icons/dist/esm/components/rings";
 
 interface PollPreviewProps {
   params: {
@@ -61,7 +61,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
           onClick={execute}
         >
           {
-            loading ? <Rings color="black" width={26} height={26} /> : t("button.create")
+            loading ? <Rings width={30} height={30} /> : t("button.create")
           }
         </button>
 
