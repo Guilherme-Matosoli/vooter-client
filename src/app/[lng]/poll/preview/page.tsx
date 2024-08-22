@@ -75,7 +75,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
         {
           error && (
             <span className="font-main font-normal text-center text-red-400 dark:text-red-200">
-              Ocorreu um erro, por favor tente novamente mais tarde
+              {t("error")}
             </span>
           )
         }
