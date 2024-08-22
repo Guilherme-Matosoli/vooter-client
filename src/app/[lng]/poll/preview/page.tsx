@@ -21,7 +21,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
   const { formFields } = useContext(PollContext);
   const valid = usePrivateRoute({ condition: formFields.title.length > 1 });
 
-  const { execute, data, loading } = useFetch<{ id: string }>({
+  const { execute, data, loading, error } = useFetch<{ id: string }>({
     path: "/poll/create",
     method: "post",
     body: formFields
@@ -72,9 +72,13 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
           {t("button.back")}
         </Link>
 
-        <span className="font-main font-normal text-center text-red-400 dark:text-red-200">
-          Ocorreu um erro, por favor tente novamente mais tarde
-        </span>
+        {
+          error && (
+            <span className="font-main font-normal text-center text-red-400 dark:text-red-200">
+              Ocorreu um erro, por favor tente novamente mais tarde
+            </span>
+          )
+        }
       </section>
     </main>
   );
