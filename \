@@ -7,13 +7,14 @@ interface Poll {
 };
 
 interface PollPageProps {
+  poll: Poll,
   params: {
     lng: string,
     id: string
   };
 };
 
-export default async function PollPage({ params: { lng, id } }: PollPageProps) {
+export default function PollPage({ params: { lng, id } }: PollPageProps) {
 
   return (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
@@ -21,3 +22,5 @@ export default async function PollPage({ params: { lng, id } }: PollPageProps) {
     </main>
   )
 };
+
+
