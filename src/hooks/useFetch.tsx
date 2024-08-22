@@ -6,12 +6,12 @@ interface UseFetchProps {
   method: "get" | "post" | "put" | "delete"
 };
 
-type UseFetchReturn<T> = [
+interface UseFetchReturn<T> {
   execute: () => Promise<void>,
-  T | null,
-  boolean,
-  Error | null
-];
+  data: T | null,
+  loading: boolean,
+  error: Error | null
+};
 
 
 export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> {
@@ -41,5 +41,5 @@ export function useFetch<T>({ path, method }: UseFetchProps): UseFetchReturn<T> 
     finally { setLoading(false) };
   }, [path, method]);
 
-  return [execute, data, loading, error];
+  return { execute, data, loading, error };
 };
