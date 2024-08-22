@@ -3,5 +3,6 @@
   "button": {
     "back": "Back",
     "create": "Create poll"
-  }
+  },
+  "error": "An error has ocurred, please try again later"
 }
