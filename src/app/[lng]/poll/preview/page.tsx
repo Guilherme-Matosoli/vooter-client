@@ -7,6 +7,7 @@ import { usePrivateRoute } from "@/hooks/usePrivateRoute";
 import Link from "next/link";
 
 import { useContext } from "react";
+import Rings from "react-loading-icons/dist/esm/components/rings";
 
 interface PollPreviewProps {
   params: {
@@ -20,7 +21,7 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
   const { formFields } = useContext(PollContext);
   const valid = usePrivateRoute({ condition: formFields.title.length > 1 });
 
-  const [execute, data, loading, error] = useFetch({ path: "/poll/create", method: "post" });
+  const { execute, data, loading, error } = useFetch({ path: "/poll/create", method: "post" });
 
   return valid && (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
@@ -53,7 +54,9 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
         <button className="button bg-white text-black border border-black 
           dark:bg-black dark:border-none dark:text-white"
         >
-          {t("button.create")}
+          {
+            loading ? <Rings width={26} height={26} /> : t("button.create")
+          }
         </button>
 
         <Link href="/poll/new" className="button bg-black text-white dark:bg-white 
