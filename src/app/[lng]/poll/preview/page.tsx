@@ -1,12 +1,13 @@
 "use client";
 import { useTranslation } from "@/app/i18n";
 import { Option } from "@/components/Option";
-import { PollContext } from "@/contexts/PolllContext";
+import { FormFields, PollContext } from "@/contexts/PolllContext";
 import { useFetch } from "@/hooks/useFetch";
 import { usePrivateRoute } from "@/hooks/usePrivateRoute";
+import axios from "axios";
 import Link from "next/link";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Rings from "react-loading-icons/dist/esm/components/rings";
 
 interface PollPreviewProps {
@@ -21,7 +22,11 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
   const { formFields } = useContext(PollContext);
   const valid = usePrivateRoute({ condition: formFields.title.length > 1 });
 
-  const { execute, data, loading, error } = useFetch({ path: "/poll/create", method: "post" });
+  const { execute, data, loading, error } = useFetch<FormFields>({
+    path: "/poll/create",
+    method: "post",
+    body: formFields
+  });
 
   return valid && (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
@@ -53,9 +58,10 @@ export default function PollPreview({ params: { lng } }: PollPreviewProps) {
       <section className="w-full flex flex-col gap-3 items-center md:flex-row md:w-1/2">
         <button className="button bg-white text-black border border-black 
           dark:bg-black dark:border-none dark:text-white"
+          onClick={execute}
         >
           {
-            loading ? <Rings width={26} height={26} /> : t("button.create")
+            loading ? <Rings color="black" width={26} height={26} /> : t("button.create")
           }
         </button>
 
