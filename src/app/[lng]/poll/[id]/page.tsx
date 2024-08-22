@@ -1,6 +1,3 @@
-import { api } from "@/services/api";
-import { GetServerSideProps } from "next";
-
 interface Poll {
   id: string,
   questions: { id: string, option: string }[]
