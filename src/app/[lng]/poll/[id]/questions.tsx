@@ -9,18 +9,21 @@ export function Questions({ questions, id }: Pick<Poll, "questions" | "id">) {
   const { t } = useTranslation(lng, "pollPage");
 
   return (
-    <form className="w-full flex flex-col items-center">
+    <form className="w-full flex flex-col items-center gap-6">
 
-      {
-        questions.map(question => {
-          return (
-            <Option
-              id={question.id}
-              option={question.option}
-            />
-          )
-        })
-      }
+      <section className="w-full flex flex-col gap-2">
+        {
+          questions.map(question => {
+            return (
+              <Option
+                id={question.id}
+                option={question.option}
+              />
+            )
+          })
+        }
+      </section>
+
 
       <button className="button bg-black text-white dark:bg-white 
         dark:border dark:border-black dark:text-black md:w-1/3"
