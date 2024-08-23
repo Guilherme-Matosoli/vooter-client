@@ -1,6 +1,6 @@
 import { api } from "@/services/api";
 
-interface Poll {
+export interface Poll {
   id: string,
   title: string,
   questions: { id: string, option: string }[]
