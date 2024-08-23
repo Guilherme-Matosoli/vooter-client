@@ -19,7 +19,9 @@ export default async function PollPage({ params: { id } }: PollPageProps) {
 
   return (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
-      <h1>{poll.title}</h1>
+      <h1 className="font-main font-bold text-4xl dark:text-white md:text-6xl">
+        {poll.title}
+      </h1>
 
       <Questions
         questions={poll.questions}
