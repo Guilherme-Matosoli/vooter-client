@@ -1,4 +1,5 @@
 import { api } from "@/services/api";
+import { Questions } from "./questions";
 
 export interface Poll {
   id: string,
@@ -19,6 +20,10 @@ export default async function PollPage({ params: { id } }: PollPageProps) {
   return (
     <main className="flex flex-1 flex-col gap-5 items-center justify-center py-5">
       <h1>{poll.title}</h1>
+      <Questions
+        questions={poll.questions}
+        id={poll.id}
+      />
     </main>
   )
 };
