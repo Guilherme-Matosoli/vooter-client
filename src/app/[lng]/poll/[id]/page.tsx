@@ -1,10 +1,17 @@
 import { api } from "@/services/api";
 import { Questions } from "./questions";
 
+interface Question {
+  id: string,
+  option: string,
+  votes: number
+};
+
 export interface Poll {
   id: string,
   title: string,
-  questions: { id: string, option: string }[]
+  total_votes: number,
+  questions: Question[]
 };
 
 interface PollPageProps {
