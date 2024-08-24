@@ -16,7 +16,7 @@ export function Option({ option, id, ...rest }: OptionProps) {
         {option}
       </span>
 
-      <Radio id={id} name="option" {...rest} />
+      <Radio id={id} {...rest} />
     </label>
   );
 };
