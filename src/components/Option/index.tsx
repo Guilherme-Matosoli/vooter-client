@@ -1,11 +1,12 @@
+import { InputHTMLAttributes } from "react";
 import { Radio } from "../Radio";
 
-interface OptionProps {
+interface OptionProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string,
   option: string
 };
 
-export function Option({ option, id }: OptionProps) {
+export function Option({ option, id, ...rest }: OptionProps) {
   return (
     <label className="w-full min-h-24 flex items-center justify-between border border-black 
       rounded-lg p-4 dark:bg-black dark:border-white"
@@ -15,7 +16,7 @@ export function Option({ option, id }: OptionProps) {
         {option}
       </span>
 
-      <Radio id={id} name="option" />
+      <Radio id={id} name="option" {...rest} />
     </label>
   );
 };
