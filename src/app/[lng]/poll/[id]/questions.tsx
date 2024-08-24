@@ -10,7 +10,6 @@ export function Questions({ questions, id }: Pick<Poll, "questions" | "id">) {
 
   return (
     <form className="w-full flex flex-col items-center gap-6">
-
       <section className="w-full flex flex-col gap-2">
         {
           questions.map(question => {
@@ -18,12 +17,13 @@ export function Questions({ questions, id }: Pick<Poll, "questions" | "id">) {
               <Option
                 id={question.id}
                 option={question.option}
+                value={id}
+                name={id}
               />
             )
           })
         }
       </section>
-
 
       <button className="button bg-black text-white dark:bg-white 
         dark:border dark:border-black dark:text-black md:w-1/3"
