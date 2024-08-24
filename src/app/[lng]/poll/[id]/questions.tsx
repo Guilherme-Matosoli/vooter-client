@@ -17,8 +17,7 @@ export function Questions({ questions, id }: Pick<Poll, "questions" | "id">) {
               <Option
                 id={question.id}
                 option={question.option}
-                value={id}
-                name={id}
+                value={question.id}
               />
             )
           })
