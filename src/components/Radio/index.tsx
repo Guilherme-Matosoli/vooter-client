@@ -1,14 +1,16 @@
 import "./styles.css";
-import { forwardRef, InputHTMLAttributes, Ref, useRef } from "react";
+import { forwardRef, InputHTMLAttributes, MouseEvent, Ref, useRef } from "react";
 
 interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 };
 
 export const Radio = forwardRef(({ ...props }: RadioProps, ref: Ref<HTMLInputElement>) => {
-  const radioRef = useRef<HTMLInputElement>(null);
+  function simulateClick(e: MouseEvent<HTMLElement>) {
+    const target = e.target as HTMLElement;
 
-  function simulateClick() {
-    radioRef.current!.click()
+    if (target.tagName != "INPUT") {
+      e.currentTarget.querySelector("input")?.click();
+    };
   };
 
   return (
