@@ -1,12 +1,12 @@
-import { InputHTMLAttributes } from "react";
+import { forwardRef, InputHTMLAttributes, Ref } from "react";
 import { Radio } from "../Radio";
 
 interface OptionProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string,
-  option: string
+  option: string,
 };
 
-export function Option({ option, id, ...rest }: OptionProps) {
+export const Option = forwardRef(({ option, id, ...rest }: OptionProps, ref: Ref<HTMLInputElement>) => {
   return (
     <label className="w-full min-h-24 flex items-center justify-between border border-black 
       rounded-lg p-4 dark:bg-black dark:border-white"
@@ -16,7 +16,7 @@ export function Option({ option, id, ...rest }: OptionProps) {
         {option}
       </span>
 
-      <Radio id={id} {...rest} />
+      <Radio id={id} {...rest} ref={ref} />
     </label>
   );
-};
+});

@@ -1,11 +1,10 @@
 import "./styles.css";
-import { InputHTMLAttributes, useRef } from "react";
+import { forwardRef, InputHTMLAttributes, Ref, useRef } from "react";
 
 interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
-
 };
 
-export function Radio({ ...props }: RadioProps) {
+export const Radio = forwardRef(({ ...props }: RadioProps, ref: Ref<HTMLInputElement>) => {
   const radioRef = useRef<HTMLInputElement>(null);
 
   function simulateClick() {
@@ -17,7 +16,7 @@ export function Radio({ ...props }: RadioProps) {
       <input
         type="radio"
         {...props}
-        ref={radioRef}
+        ref={ref}
         hidden
       />
 
@@ -26,4 +25,4 @@ export function Radio({ ...props }: RadioProps) {
       </span>
     </section>
   )
-}
+});
