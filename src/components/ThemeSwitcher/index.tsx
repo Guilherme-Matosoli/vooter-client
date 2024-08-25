@@ -1,13 +1,13 @@
 "use client";
 import { ThemeContext } from "@/contexts/ThemeConxtex";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useContext(ThemeContext);
+  const localTheme = localStorage.getItem("theme");
 
   useEffect(() => {
-    const localTheme = localStorage.getItem("theme");
     const darkPrefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (darkPrefers && !localTheme) {
@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
 
     if (localTheme) setTheme(localTheme);
     if (localTheme == "dark") document.documentElement.classList.add("dark");
-  }, [localStorage.getItem("theme")]);
+  }, [theme]);
 
   const changeTheme = () => {
     const localTheme = localStorage.getItem("theme");
