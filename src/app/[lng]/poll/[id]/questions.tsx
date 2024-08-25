@@ -10,7 +10,8 @@ export function Questions({ questions, id }: Pick<Poll, "questions" | "id">) {
   const { t } = useTranslation(lng, "pollPage");
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      voted_in: ""
+      voted_in: "",
+      poll_id: id
     }
   });
 
